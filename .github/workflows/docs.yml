@@ -14,24 +14,29 @@ permissions:
     pages: write
     id-token: write
     
-
+# DEPLOY Pages
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false  # disable default token usage
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
 
-      - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
+    - name: Install dependencies
+      run: pip install mkdocs mkdocs-material
 
-      - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mkdocs gh-deploy --force
+    - name: Configure Git with token
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+    - name: Deploy to GitHub Pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mkdocs gh-deploy --force --remote-name origin --remote-branch gh-pages
+
