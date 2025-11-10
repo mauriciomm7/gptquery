@@ -3,7 +3,7 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - main  # Trigger deployment on pushes to main branch
+      - master 
 jobs:
   deploy:
     runs-on: ubuntu-latest
