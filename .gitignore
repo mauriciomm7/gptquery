@@ -1,0 +1,17 @@
+# IGNORE Python compiled files
+*.pyc
+__pycache__/
+_quarto.yml
+.env
+.ipynb_checkpoints
+*.pdf
+
+# Testing nb 
+_test_tool_text_extraction.ipynb
+
+# IGNORE Archive files
+/archive
+
+# IGNORE distribution files 
+/dist
+/gptquery.egg-info
