@@ -87,7 +87,7 @@ def run_extract_authors(df: pd.DataFrame,
                 temperature=0.0,             # Deterministic for extraction
                 max_tokens=kwargs.get('max_tokens', 10000)  # Extraction may need more tokens
             )
-            # ADD THIS - Process the result
+            # Process the result
             processed_result = _process_extraction_result(result)
             results.append(processed_result)
             

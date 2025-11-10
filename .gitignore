@@ -10,8 +10,11 @@ _quarto.yml
 _test_tool_text_extraction.ipynb
 
 # IGNORE Archive files
-/archive
+archive/
 
 # IGNORE distribution files 
-/dist
-/gptquery.egg-info
+dist/
+gptquerytools.egg-info/
+
+# IGNORE mkdocs files
+site/

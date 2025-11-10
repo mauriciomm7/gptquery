@@ -2,6 +2,9 @@
 
 """
 DataFrame validation utilities for GPT query processing.
+TODO 
+[ ] MAYBE restructure so that logging is its own directory.
+
 """
 import pandas as pd
 from typing import Callable, List

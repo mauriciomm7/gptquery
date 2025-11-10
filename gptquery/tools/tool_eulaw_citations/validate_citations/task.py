@@ -49,10 +49,10 @@ def run_validate(df: pd.DataFrame, prompt_func: Callable, api_key: str,
     if throttler is None:
         throttler = SimpleThrottler(rpm=50) # type: ignore
     
-    # Initialize multi-provider client
+    # INITIALIZE multi-provider client
     client = GPTClient(api_key, model, provider)
     
-    # Use provided system message or default from prompt file
+    # USE provided system message or default from prompt file
     if not system_message:
         from .prompts.default import VALIDATION_SYSTEM_MESSAGE
         system_message = VALIDATION_SYSTEM_MESSAGE

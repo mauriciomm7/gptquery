@@ -1,63 +1,63 @@
 # Quick Start
 
-The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used to
+The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used in for preocessing the data of any research paper. This quickstart guide is inteded for end-users of these tools. If you wnat to create your own tool check out [developers quickstart](./devsquickstart.md)
 
-**Basic Objects**
+## Installation
 
-- `prompt_contructor_function()`
- - SYSTEM_MESSAGE
+Install the latest stable release directly from PyPI using pip:
 
-- `LoggerClass()`
-
-- `task_running_function()`
-
-
-## 🎮 Usage
-
-## Multi-Provider Calls
-
-```python
-# OpenAI GPT-4
-result_openai = run_validate_basic(df, openai_key, provider="openai", model="gpt-4o")
-
-# Perplexity Sonar
-result_perplexity = run_validate_basic(df, perplexity_key, provider="perplexity", model="sonar-pro")
-
-# Claude 3.5 Sonnet  
-result_claude = run_validate_basic(df, claude_key, provider="claude", model="claude-3-5-sonnet-20241022")
+```Shell
+pip install gptquerytools
 ```
 
-See [docs/](./docs) for detailed usage and architecture.
+## 🔑 Authentication
 
-
-## Provider-Specific and Costum Throttling Configuration
+Use [**python-dotenv**](https://pypi.org/project/python-dotenv/) (Python) to load the environment variable from a .env file:
 
 ```python
-from processing.throttling import TokenBucketThrottler
-from gptquery.tools.tool_eulaw_citations import run_extract
-from gptquery.tools.tool_eulaw_citations.extract_citations.prompts.default import (prompt_extract_basic)
+from pathlib import Path
+from dotenv import load_dotenv
 
-# OpenAI with custom throttling
-throttler = TokenBucketThrottler(rpm=30)
+# LOAD environment variables from <name>.env file
+SECRETS_FILE = Path(r"C:\LocalSecrets\master.env")
+load_dotenv(str(SECRETS_FILE))
 
-df_out = run_extract(
-         df,
-         prompt_func=prompt_validate_completeness,
-         api_key="your-openai-key",
-         provider="openai",
-         throttler=throttler,
-         model="gpt-4.1-mini",
-         granularity="article",
-         progress=True )
-df_out
-
-# Perplexity with online search capability
-df_pplx = run_validate(
-          df,
-          prompt_func=prompt_validate_completeness,
-          api_key="your-perplexity-key", 
-          provider="perplexity",
-          model="llama-3.1-sonar-large-128k-online",  # Real-time web search
-          granularity="full")
-df_pplx
+# ASSIGN the values of the environment variables
+openai_key = str(os.getenv("OPENAI_UIO24EMC_KEY"))
 ```
+
+Now everytime you make a tool call you just have to provide the api key that you want to use.
+
+## 🎮 1. EU Law Citations Proccessing
+
+The following examples correspond to the EU Law Citations Tools. For full details see [full docs](./tools/eulaw_citations.md).
+
+- **Example 1**: Validate whether all in-text citations from `question_text` are in `potential_citations`:
+
+```python
+from gptquery import run_validate_basic
+new_validate_df = run_validate_basic(df_validation, 
+                                     api_key=openai_key, 
+                                     model="gpt-4.1-mini")
+print(new_validate_df['is_complete'])  
+>>> # RESULT Dataframe new col:
+>>> [["complete"], ["incomplete"], ["ERROR"]]
+```
+
+- **Example 2**: Extract missing in-text citations from `question_text` that are NOT listed in `potential_citations`:
+
+```python
+from gptquery import run_extract_basic
+df_out = run_extract_basic(df_validation,
+                           api_key=openai_key, 
+                           model="gpt-4.1-mini"))
+print(df_out['missing_citations'])
+>>> # Result DataFrame has new 'missing_citations' column:
+>>> [[], ["citation1"], ["citation1", "citation2"], ["ERROR"]]
+```
+
+## 🎮 2. Text Extracting Tools
+
+
+## 💰 Cost Estimation Utilities
+

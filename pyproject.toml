@@ -12,22 +12,16 @@ description = "GPTQuery is a modular Python framework for building, orchestratin
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Mauricio Mandujano Manriquez" }]
-license = { text = "MIT" }
-license-files = ["LICEN[CS]E*"]
+license = "MIT"
 keywords = ["AI", "tools", "framework", "research", "GPT", "modular"]
-classifiers = [ 
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent"
-    ]
 dependencies = [
     "pandas>=2.0",
     "requests>=2.32",
     "tokencost>=0.1.26",
     "tiktoken>=0.12.0",
     "IPython>=8.26.0"
-    ]
+]
 
 [project.urls]
-Homepage = "https://github.com/mauriciomm7/gptquery"
-Issues = "https://github.com/mauriciomm7/gptquery/issues"
+homepage = "https://github.com/mauriciomm7/gptquery"
+issues = "https://github.com/mauriciomm7/gptquery/issues"

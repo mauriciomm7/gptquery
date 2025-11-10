@@ -2,18 +2,9 @@
 
 GPTQuery is a modular Python framework for building, orchestrating, and deploying AI-powered tools across domains. It provides a clear, scalable architecture for integrating multiple AI providers (OpenAI, Perplexity, Claude, etc.) while maintaining robust error handling, throttling, and dynamic prompting.
 
-The goal of this project is for researchers (or anyone) to create tools derived from custom prompts that can be easily integrated into reserach pipelines.
+## 📋 Project Description
 
-## 🚀 Features
-
-- **Multi-Provider Support**: Unified interface for OpenAI, Perplexity, Claude, and other AI APIs.  
-- **Modular Tool Design**: Organize AI functionality into independent, reusable tool families.  
-- **Task Step Separation**: Each tool can have multiple steps or functional modules.  
-- **Smart Defaults**: Automatically selects optimal models or parameters per provider.  
-- **Safe Data Operations**: Uses `@requires_columns` for safe DataFrame operations.
-- **Advanced Throttling**: Token bucket and adaptive rate-limiters for API management.  
-- **Robust Error Handling**: Preserves partial results and gracefully handles failures.  
-- **Cost Optimization**: Integrates token management to reduce API costs.  
+The goal of this project is for researchers (or anyone) to create AI-powered tools using custom prompts that can be easily integrated into reserach pipelines. In theory, you can equally  use the libraries provided by `openai`, `anthropic`, or `perplexity`. However, the adavantages of this framework is that it handles `throttling`, `logging` and task specific post-processing. That is, when you create a tool following the proposed tool architecture you ensure robustness and transparency for sharing you specific tool\prompt with other researchers in a reliable way.
 
 ## 🏗️ Architecture Overview
 
@@ -47,6 +38,17 @@ tool_example/
 │ └── log.py
 └── init.py # exposes run_step_one, run_step_two
 ```
+
+## 🚀 Features
+
+- **Multi-Provider Support**: Unified interface for OpenAI, Perplexity, Claude, and other AI APIs.  
+- **Modular Tool Design**: Organize AI functionality into independent, reusable tool families.  
+- **Task Step Separation**: Each tool can have multiple steps or functional modules.  
+- **Smart Defaults**: Automatically selects optimal models or parameters per provider.  
+- **Safe Data Operations**: Uses `@requires_columns` for safe DataFrame operations.
+- **Advanced Throttling**: Token bucket and adaptive rate-limiters for API management.  
+- **Robust Error Handling**: Preserves partial results and gracefully handles failures.  
+- **Cost Optimization**: Integrates token management to reduce API costs.  
 
 ## 🛠️ Installation
 
@@ -89,11 +91,11 @@ GitHub: https://github.com/mauriciomm7/gptquery
 
 To integrate your tool into GPTQuery, please:
 
-- Place your tool inside the tools/ directory following the existing modular structure.
+- Place your tool inside the `tools/` directory following the existing modular structure.
 
 - Organize your tool with submodules for each step or feature, including:
-  - `task.py` for core functionality,
-  - `prompt.py` for AI prompts,
+  - `task.py` for core functionality.
+  - `prompt.py` for AI prompts.
   - `log.py` for logging.
 
 - Expose your tool’s API in its `__init__.py`.

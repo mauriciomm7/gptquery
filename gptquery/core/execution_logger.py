@@ -15,7 +15,7 @@ class ExecutionLogger:
         self.filename = f"{self.timestamp}_{tool_name}.json"
         self.log_path = self.log_dir / self.filename
         
-        # Create logs directory if needed
+        # CREATE logs directory if needed
         try:
             self.log_dir.mkdir(exist_ok=True)
         except Exception as e:

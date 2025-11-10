@@ -1,0 +1,25 @@
+site_name: GPTQuery
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    scheme: monokai
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
+  highlightjs: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Tools:
+      - EU Law Citations: tools/eulaw_citations.md

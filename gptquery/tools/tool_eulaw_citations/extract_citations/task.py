@@ -98,7 +98,7 @@ def run_extract(df: pd.DataFrame, prompt_func: Callable, api_key: str,
                 temperature=0.0,             # Deterministic for extraction
                 max_tokens=kwargs.get('max_tokens', 5000)  # Extraction may need more tokens
             )
-            # ADD THIS - Process the result
+            # POST Process the result
             processed_result = _process_extraction_result(result)
             results.append(processed_result)
             
