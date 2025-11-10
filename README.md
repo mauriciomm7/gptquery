@@ -114,3 +114,7 @@ Thank you for contributing to GPTQuery!
 ## 📄 License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## ✅ TODO
+
+- [  ] ADD GPTClient that handles files.

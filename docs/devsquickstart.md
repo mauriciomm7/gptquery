@@ -27,7 +27,10 @@ The logic of this GPTClient is that you initialize it with the parameters you wa
 ```python
 from gptquery.core import GPTClient
 # 1. Initialize a client 
-client = GPTClient(api_key="sk-123", provider="openai", default_model="gpt-4.1-mini")
+client = GPTClient(api_key="sk-123", 
+                   provider="openai", 
+                   default_model="gpt-4.1-mini")
+
 # 2. Loop through list of items
 for user_message in texts:
     result = client.extract(
@@ -132,7 +135,7 @@ SYSTEM_MSG = """
 This is is the static message that will be passes as system_message for every call.
 You can use multiline formatting as long as you use the triple quotation marks.
 
-And even add new lines directly '\n'.
+And even add '\n' new lines directly.
 """
 ```
 

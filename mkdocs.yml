@@ -3,11 +3,14 @@ docs_dir: docs
 theme:
   name: material
   palette:
-    scheme: monokai
-    toggle:
-      icon: material/weather-night
-      name: Switch to light mode
-  highlightjs: true
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -21,6 +24,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Quickstart: quickstart.md
-  - Development Guide: devsquickstart.md
+  - Developers Guide: devsquickstart.md
   - Tools:
       - EU Law Citations: tools/eulaw_citations.md
