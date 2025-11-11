@@ -1,9 +1,9 @@
-# Advanced Usage 
+# ⚗️ Advanced Usage
 
+When you create a new tool you should make a function `*_basic()` that has all the presets required making the tool call work following default settings. However, for testing purposes or for custom pipelines you should be able to use the `run_*` function. This set-up affords flexibility and ease for both basic and power users as the basic is just a wrapper with defaults for the base main run fucntion.
 
+## 🔀 Multi-Provider Tool Calls
 
-
-## Multi-Provider Calls
 
 ```python
 # OpenAI GPT-4
@@ -26,7 +26,21 @@ result_claude = run_validate_basic(df,
 ```
 
 
-## Provider-Specific and Costum Throttling Configuration
+
+```python
+# RUN using perplexity with online search capability
+df_pplx = run_validate(
+          df,
+          prompt_func=prompt_validate_completeness,
+          api_key="your-perplexity-key", 
+          provider="perplexity",
+          model="llama-3.1-sonar-large-128k-online",  # Real-time web search
+          granularity="full")
+df_pplx
+```
+
+
+## Custom Throttling Configuration
 
 ```python
 from processing.throttling import TokenBucketThrottler
@@ -46,14 +60,4 @@ df_out = run_extract(
          granularity="article",
          progress=True )
 df_out
-
-# Perplexity with online search capability
-df_pplx = run_validate(
-          df,
-          prompt_func=prompt_validate_completeness,
-          api_key="your-perplexity-key", 
-          provider="perplexity",
-          model="llama-3.1-sonar-large-128k-online",  # Real-time web search
-          granularity="full")
-df_pplx
 ```

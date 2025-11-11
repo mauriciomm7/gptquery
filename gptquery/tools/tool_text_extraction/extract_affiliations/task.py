@@ -22,7 +22,7 @@ def run_extract_affiliations(df: pd.DataFrame,
                              throttler: Optional[Any] = None, 
                              provider: str = "openai", 
                              progress: bool = True, 
-                             system_message: str = "", 
+                             system_message: str = EXTRACTION_SYSTEM_MESSAGE, 
                              **kwargs) -> pd.DataFrame:
     """
     Extracts author affiliations from text data in a DataFrame using a GPT-based extraction model.
@@ -60,7 +60,7 @@ def run_extract_affiliations(df: pd.DataFrame,
         from ....processing.throttling import SimpleThrottler
         throttler = SimpleThrottler(rpm=50) # type: ignore
     
-    # Initialize multi-provider client
+    # INITIALIZE multi-provider client
     client = GPTClient(api_key, model, provider)
     
     # Prepare results
@@ -175,10 +175,6 @@ def run_extract_affiliations_basic(df: pd.DataFrame,
         DataFrame with 'affiliations' column containing lists of affiliation strings
     """
     from .prompts.default import prompt_extract_affiliations
-    
-    # Auto-adjust model for provider if using default
-    if model == "gpt-4.1-mini" and provider == "perplexity":
-        model = "sonar-pro"  # Sensible Perplexity default
     
     return run_extract_affiliations(
         df=df,

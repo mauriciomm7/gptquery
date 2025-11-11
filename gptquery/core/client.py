@@ -3,6 +3,7 @@
 TODO
 [ ] REMOVE the default_model architecture and make it such that it forces to provide a model.  
     Anyways, defualts are handled at `prompt_fucntion()` entry point.
+[ ] INITIALIZING with provider + api_key is good, model is unecessary.
 """
 
 import requests

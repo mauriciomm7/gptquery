@@ -117,4 +117,5 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## ✅ TODO
 
-- [  ] ADD GPTClient that handles files.
+- [X] ADD GPTVisionClient that handles files.
+- [ ] ADD Example of GPTVisionClient.
