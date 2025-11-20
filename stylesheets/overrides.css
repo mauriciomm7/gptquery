@@ -1,0 +1,14 @@
+/* Make main text smaller */
+.md-typeset {
+    font-size: 0.70rem;   /* default is ~0.9–1rem */
+}
+
+/* Make code blocks smaller */
+.md-typeset code,
+.md-typeset pre code {
+    font-size: 0.65rem;
+}
+/* Headings  */
+.md-typeset h1 { font-size: 1.2rem; }
+.md-typeset h2 { font-size: 1.1rem; }
+.md-typeset h3 { font-size: 0.9rem; }
