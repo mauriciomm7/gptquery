@@ -122,6 +122,7 @@ This project is licensed under the [MIT License](./LICENSE).
 
 - [X] ADD GPTVisionClient that handles files.
 - [ ] ADD Example of GPTVisionClient.
+- [ ] DOCS - UPDATE the codeblocks aesthetics, better spacing.
 
 Useful commands:
 

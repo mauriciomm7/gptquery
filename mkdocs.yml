@@ -34,12 +34,12 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
 
-extra_css:
-  - stylesheets/overrides.css
-
 nav:
   - Home: index.md
   - Quickstart: quickstart.md
   - Developers Guide: devsquickstart.md
   - Tools:
-      - EU Law Citations: tools/eulaw_citations.md
+    - EU Law Citations: tools/eulaw_citations.md
+
+extra_css:
+  - stylesheets/overrides.css
