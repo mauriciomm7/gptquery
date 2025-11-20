@@ -2,7 +2,6 @@
 
 This set of tools were created to extract EU Law citations from text following a standarized approach. It works best when you first scrape citations from metadata and provide them as a baseline for the LLM to extract them.
 
-
 ## Basic Usage Description
 
 

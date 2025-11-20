@@ -10,8 +10,8 @@ Clone the repository to build custom tools based on GPTQuery, clone the repo and
 # 1. Clone the repo:
 git clone https://github.com/mauriciomm7/gptquery.git
 cd gptquery
-# 2. Install dependencies:
-pip install -r requirements.txt
+# 2. Install as editable package:
+pip install -e .
 ```
 
 ## 🧱 Building Blocks

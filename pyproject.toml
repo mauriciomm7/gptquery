@@ -7,7 +7,7 @@ where = ["."]
 
 [project]
 name = "gptquerytools"
-version = "0.0.1"
+version = "0.0.2"
 description = "GPTQuery is a modular Python framework for building, orchestrating, and deploying AI-powered tools across domains."
 readme = "README.md"
 requires-python = ">=3.10"

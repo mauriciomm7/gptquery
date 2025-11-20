@@ -1,6 +1,6 @@
 # Quick Start
 
-The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used in for preocessing the data of any research paper. This quickstart guide is inteded for end-users of these tools. If you wnat to create your own tool check out [developers quickstart](./devsquickstart.md)
+The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used in for preocessing the data of any research paper. This quickstart guide is inteded for end-users of these tools. If you wnat to create your own tool check out [developers guide](./devsquickstart.md).
 
 ## Installation
 

@@ -1,5 +1,8 @@
 # GPTQuery – Modular Tool Framework
 
+[![PyPI version](https://img.shields.io/pypi/v/gptquerytools.svg)](https://pypi.org/project/gptquerytools/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 GPTQuery is a modular Python framework for building, orchestrating, and deploying AI-powered tools across domains. It provides a clear, scalable architecture for integrating multiple AI providers (OpenAI, Perplexity, Claude, etc.) while maintaining robust error handling, throttling, and dynamic prompting.
 
 ## 📋 Project Description
@@ -119,3 +122,16 @@ This project is licensed under the [MIT License](./LICENSE).
 
 - [X] ADD GPTVisionClient that handles files.
 - [ ] ADD Example of GPTVisionClient.
+
+Useful commands:
+
+```shell
+# Build Docs
+mkdocs build 
+mkdocs serve
+
+# Build Package
+rm -rf dist build *.egg-info
+python -m build
+twine upload dist/*
+```

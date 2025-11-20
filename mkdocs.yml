@@ -1,13 +1,24 @@
 site_name: GPTQuery
 docs_dir: docs
+
 theme:
   name: material
+  # logo: assets/logov1.png
+  font:
+    text: Roboto
+    code: JetBrains Mono
   palette:
+    # Palette toggle for light mode
     - scheme: default
+      primary: cyan          # top bar color
+      accent: pink
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+    # Palette toggle for dark mode
     - scheme: slate
+      primary: cyan
+      accent: pink
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -17,9 +28,14 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - admonition
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
+
+extra_css:
+  - stylesheets/overrides.css
 
 nav:
   - Home: index.md
