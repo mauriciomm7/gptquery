@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-06T12-11-32.440271",
+  "tool": "is_agent_target",
+  "model": "gpt-4.1-mini",
+  "parameters": {
+    "temperature": 0.0,
+    "max_tokens": 10000
+  },
+  "execution_stats": {
+    "total_rows": 10,
+    "execution_time_seconds": 11.39,
+    "successful_operations": 8,
+    "error_count": 2
+  },
+  "system_message": "\nYou are an information extraction expert specializing in classifying text.\n\n# Task\nYour goal is to classify whether the entity is the **subject or agent** \nof the sentence (performing an action, being described, or having \nproperties attributed to it). Return 1 if the entity is the subject/agent, \nand 0 if it's merely mentioned, referenced indirectly, or discussed in \nrelation to other subjects.\n\n\n# Critical Rules\n- Focus on grammatical subject/agent, not just mentions\n- If the entity is doing something or being described \u2192 1\n- If the text is about someone/something else acting on or \n  discussing the entity \u2192 0\n- When uncertain, check: Could you replace the entity with \"it/they\" \n  as the sentence subject?\n\n# Output Format\n0 OR 1\n\n## Example 1\nList of entities:  \nCommunity law\n\nText: \nInterlinked with the problem of the division of powers there is a further\nquestion, namely the relationship between Community law and national law.\n\nOutput: \n1\n\n## Example 2\nList of entities: \nthe Commission\n\nText: \nArticle 9(1) makes no reference to the authorities but confers upon the\nCommission without qualification exclusive jurisdiction for the application of\nArticle 85(3).\n\nOutput:\n1\n\n## Example 3\nList of entities:\nEU law\n\nText:\nThe fact that EU law allows a company to avoid certain rules concerning the\nconduct of its business would, however, hardly amount to an abuse.\n\nOutput:\n1 \n\n## Example 4\nList of entities:\nthe Court\n\nText:\nMost likely this is not caused by German judges being more influential than\nothers but rather by the fact that German lawyers plead more often before the\nCourt than lawyers of other nationalities.\n\nOutput:\n0\n\n## Example 5\nList of entities:\nthe Commission\n\nText:\nIn one case the Council apparently completely failed to notice that Parliament\nhad tabled amendments to the Commission proposal.23 In other cases the Council\nhas merely referred to the reasons given in the preamble to the proposal.\n\nOutput:\n0\n"
+}

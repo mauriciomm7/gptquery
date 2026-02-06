@@ -8,6 +8,7 @@ TODO
 """
 import pandas as pd
 from typing import Callable, List
+from .error_constants import (ERROR,API_ERROR,PROCESSING_ERROR)
 # from functools import wraps
 
 def requires_columns(*columns):
@@ -96,3 +97,35 @@ def get_prompt_required_columns(prompt_func: Callable) -> List[str]:
         )
     
     return prompt_func.REQUIRED_COLUMNS.copy()
+
+
+def report_final(results: list, total_rows: int):
+    """
+    Prints a summary of processing results.
+    
+    Args:
+        results (list): List of processed outputs (0, 1, or error strings like 'ERROR', 'PROCESS - ERROR').
+        total_rows (int): Total number of rows processed.
+    """
+    error_strings = {ERROR,API_ERROR,PROCESSING_ERROR}
+    error_count = sum(1 for r in results if r in error_strings)
+    successful_extractions = total_rows - error_count
+    
+    print(f"  Successful classifications: {successful_extractions}")
+    print(f"  Errors: {error_count}")
+    print(f"  Total rows processed: {total_rows}")
+
+def report_progress_step(i, total_rows):
+    """
+    Prints progress updates every 10% of total rows.
+    
+    Args:
+        i (int): Current index (0-based) of processing.
+        total_rows (int): Total number of rows being processed.
+    """
+    # Calculate step size for 10% updates
+    step = max(1, total_rows // 10)
+    
+    if (i + 1) % step == 0 or (i + 1) == total_rows:
+        percentage = ((i + 1) / total_rows) * 100
+        print(f"Progress: {i+1}/{total_rows} ({percentage:.1f}%)")

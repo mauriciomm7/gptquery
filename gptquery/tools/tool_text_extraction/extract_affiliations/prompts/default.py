@@ -9,7 +9,6 @@ Each prompt template must clearly document its expected parameters - this is the
 
 from .....processing.utils import requires_columns
 
-
 # Static system message for extraction
 EXTRACTION_SYSTEM_MESSAGE = """
 You are an information extraction expert specializing in extracting academic or organizational author affiliations from text.
@@ -68,8 +67,6 @@ def prompt_extract_affiliations(first_page_text: str, **kwargs) -> str:
 
     Returns:
         str: Formatted user message for GPT (system message handled separately)
-        
-    Expected GPT Output: "Institution 1, Institution 2, Institution 3"
     """
     # Create user message (dynamic content only)
     user_message = f"""TEXT TO ANALYZE:
