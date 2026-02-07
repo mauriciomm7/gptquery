@@ -61,3 +61,39 @@ df_out = run_extract(
          progress=True )
 df_out
 ```
+
+## 💰 Cost Estimation Utilities
+
+As you start to work with Large Language Models APIs in a regular basis you will soon realize that costs are not trivial. Thus, running a quick cost estimation will inform whether you can run a pipeline over an entire dataset or not. For this this package contains two utilities built upon  [tokencost](https://pypi.org/project/tokencost/) and [tiktoken](https://github.com/openai/tiktoken) that use up to date cost information and tokenization make this possible.
+
+- `def estimate_costs_for_models()`
+
+```python
+## 1. COST Analysis cmlr_snippets_df for 2000 snippets
+from gptquery.estimation.cost_estimator import (estimate_costs_for_models)
+from gptquery.tools.tool_classify_text.is_agent_target.prompts.default import (prompt_is_agent_target,
+                                                                               SNIPPETS_SYSTEM_MESSAGE)
+## 2. FROM Sample data on CMLR snippets
+cmlr_snippets_df = pd.read_csv("data/uot25rev/cmlr_snippets_sample.parquet")
+
+# 3. MODELS to tests
+MODELS = ["gpt-4.1-mini", "gpt-5", "gpt-5-mini","gpt-5-nano" ]
+
+## 4. COST estimation 
+costs = estimate_costs_for_models(cmlr_snippets_df,
+                                  prompt_is_agent_target,
+                                  models=MODELS,
+                                  system_msg=SNIPPETS_SYSTEM_MESSAGE,
+                                  expected_response_length= "1")
+
+```
+
+- `create_cost_matrix()`
+
+```python
+## 1. CREATE COST MATRIX
+from gptquery.estimation.cost_estimator import (create_cost_matrix)
+create_cost_matrix(costs)
+```
+
+![Example of Matrix Output](assets\advanded_usage_matrix.png)

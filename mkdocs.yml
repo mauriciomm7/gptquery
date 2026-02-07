@@ -3,7 +3,8 @@ docs_dir: docs
 
 theme:
   name: material
-  # logo: assets/logov1.png
+  logo: assets/robot-talking.png
+  favicon: assets/robot-talking.ico
   font:
     text: Roboto
     code: JetBrains Mono
@@ -38,8 +39,11 @@ nav:
   - Home: index.md
   - Quickstart: quickstart.md
   - Developers Guide: devsquickstart.md
-  - Tools:
+  # - Advanced Usage: advanced_usage.md
+  - 🧰 Tools:
     - EU Law Citations: tools/eulaw_citations.md
+    - Classify EU Legal Text: tools/classify_text.md
+    - Extract Entities: tools/text_extraction.md
 
 extra_css:
   - stylesheets/overrides.css

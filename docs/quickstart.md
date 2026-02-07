@@ -1,6 +1,6 @@
 # Quick Start
 
-The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used in for preocessing the data of any research paper. This quickstart guide is inteded for end-users of these tools. If you wnat to create your own tool check out [developers guide](./devsquickstart.md).
+The goal of this package is to enable reserachers (or anyone) to create tractable AI tools that were used in the  processing of data for a research paper. This quickstart guide is inteded for end-users of these tools. If you want to create your own tool check out [developers guide](./devsquickstart.md).
 
 ## Installation
 
@@ -28,7 +28,7 @@ openai_key = str(os.getenv("OPENAI_UIO24EMC_KEY"))
 
 Now everytime you make a tool call you just have to provide the api key that you want to use.
 
-## 🎮 1. EU Law Citations Proccessing
+## 1. EU Law Citations Proccessing
 
 The following examples correspond to the EU Law Citations Tools. For full details see [full docs](./tools/eulaw_citations.md).
 
@@ -56,8 +56,8 @@ print(df_out['missing_citations'])
 >>> [[], ["citation1"], ["citation1", "citation2"], ["ERROR"]]
 ```
 
-## 🎮 2. Text Extracting Tools
+## 2. Text Extracting Tools
 
 
-## 💰 Cost Estimation Utilities
+## 3️. Text Classification Tools
 

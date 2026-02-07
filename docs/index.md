@@ -11,5 +11,29 @@ Welcome to GPTQuery — a modular framework for AI-powered tool orchestration.
 
 ???+ tip "Tip for Devs"
 
-     I recommend you install the package from the source instead of from `PyPI` using pip since the most up to date, and developing tools requires you to have access to the source code anyways to add your own tool.
+     I recommend that you install this as an editable package from the source code, rather than from pip. Since developing tools requires you to have access to the source code  to add your own tool, this ensure that you're working with the most up to date version. 
 
+## 🎓 Citation
+
+If you use this framework in academic research, please cite:
+
+Mandujano Manríquez, M. (2025). *GPTQuery: Modular framework for building and orchestrating AI-powered research tools.*
+GitHub: https://github.com/mauriciomm7/gptquery
+
+``` bibtex
+@misc{mandujano2025gptquery,
+  author       = {Mauricio Mandujano Manríquez},
+  title        = {GPTQuery: Modular framework for building and orchestrating AI-powered research tools},
+  year         = {2025},
+  howpublished = {\url{https://github.com/mauriciomm7/gptquery}},
+  note         = {GitHub repository}
+}
+```
+
+## 🙏 Acknowledgments
+
+- Chatbot logo created by Freepik - [Flaticon](https://www.flaticon.com/free-icons/chatbot)
+- CI/CD automation using GitHub Actions — Automating build, test, and deployment workflows  
+- [tokencost](https://pypi.org/project/tokencost/) — Token cost estimation for language models  
+- [tiktoken](https://github.com/openai/tiktoken) — Tokenization library used for accurate token counts  
+- [IPython](https://pypi.org/project/ipython/) — Interactive computing environment and enhanced Python shell

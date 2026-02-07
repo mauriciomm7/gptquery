@@ -5,7 +5,7 @@ This set of tools were created to extract EU Law citations from text following a
 ## Basic Usage Description
 
 
-### 🔧 VALIDATE whether all in-text citations are listed
+### ✔️ VALIDATE whether all in-text citations are listed
 
 The first tool, `run_validate_basic()`, expects a text column (`question_text`) that may contain in-text EU law citations, and separately, a single string listing all citations (`potential_citations`). For each row, the function combines the text with this list of citations to create the user message (`user_msg`). Using these dynamic user messages and a tool-specific system prompt, it determines whether any citations are missing or if all are covered by the provided list.
 
@@ -16,7 +16,7 @@ df_out = run_validate_basic(df, api_key="your-openai-key")
 print(df_out['is_complete'])  # "complete" or "incomplete"
 ```
 
-### 🔧 EXTRACT EU Law in-text citations
+### ⛏️ EXTRACT EU Law in-text citations
 
 The second tool is `run_extract_basic()` which expects that you provide a text column (`question_text`) where there may be in-text EU Law citations and separately, as a single string, a list of all citations (`potential_citations`). For each row, the prompt function combines the text of `question_text` with this list of citations to make the user message `user_msg`.
 
@@ -44,7 +44,7 @@ print(df['missing_citations'])
 >>> [[], ["citation1"], ["citation1", "citation2"], ["ERROR"]]
 ```
 
-### 🔧 SELECT EU Law in-text citations
+### 📑 SELECT EU Law in-text citations
 
 ```python
 from gptquery.tools.tool_eulaw_citations import run_select_basic

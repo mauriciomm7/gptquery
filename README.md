@@ -122,7 +122,10 @@ This project is licensed under the [MIT License](./LICENSE).
 
 - [X] ADD GPTVisionClient that handles files.
 - [ ] ADD Example of GPTVisionClient.
+- [ ] ADD COL paramters to facing api such that it renames columns and never breaks contract?
 - [ ] DOCS - UPDATE the codeblocks aesthetics, better spacing.
+- [ ] DOCS - ADD copy-paste to codeblocks.
+
 
 Useful commands:
 

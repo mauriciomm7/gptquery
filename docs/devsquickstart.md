@@ -46,7 +46,7 @@ Now, that you can now run many queries using a basic loop, you may still want to
 
 ```python
 from gptquery.core import GPTClient
-from gptquery.processing import GPTClient
+from gptquery.processing import SimpleThrottler
 
 # Initialize the GPT client
 client = GPTClient(model="gpt-4.1-mini", temperature=0)
@@ -103,7 +103,8 @@ Under the project dir you will find a `tools/` directory which is where the GPI 
 
 - **Task-Specific Tools (`tools/`)**
   - Each tool lives in its own namespace (e.g., `tool_name`).  
-  - Tools are subdivided into **submodules/steps**:
+  - Tools may have **components** or **steps** (e.g., `tool_name\is_agent_mentioned`)
+  - Each component or step has:
     - `prompt.py` → AI prompt definitions
     - `task.py` → user-facing functions (`run_*`)  
     - `log.py` → logging utilities  
