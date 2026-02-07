@@ -9,7 +9,7 @@ Each prompt template must clearly document its expected parameters - this is the
 from .....processing.utils import requires_columns
 
 # STATIC system message for extraction
-EXTRACTION_SYSTEM_MESSAGE = """
+SNIPPETS_SYSTEM_MESSAGE = """
 You are an information extraction expert specializing in classifying text.
 
 # Task
@@ -18,7 +18,6 @@ of the sentence (performing an action, being described, or having
 properties attributed to it). Return 1 if the entity is the subject/agent, 
 and 0 if it's merely mentioned, referenced indirectly, or discussed in 
 relation to other subjects.
-
 
 # Critical Rules
 - Focus on grammatical subject/agent, not just mentions
@@ -29,7 +28,12 @@ relation to other subjects.
   as the sentence subject?
 
 # Output Format
-0 OR 1
+You MUST respond with EXACTLY one character: either 0 or 1
+- Do NOT include any explanation, reasoning, or additional text
+- Do NOT use quotes, punctuation, or whitespace
+- Do NOT output anything other than the single digit 0 or 1
+- VALID outputs: 0 or 1
+- INVALID outputs: "0", "1", 0., 1., "zero", "one", or any text
 
 ## Example 1
 List of entities:  
@@ -88,7 +92,7 @@ has merely referred to the reasons given in the preamble to the proposal.
 
 Output:
 0
-""" 
+"""
 
 
 @requires_columns("snippet_text","entities_str")

@@ -5,9 +5,9 @@ Is agent snippet classification  task execution with external throttling and rob
 import pandas as pd
 from typing import Optional, Callable, Any
 from ....core.client import GPTClient
-from ....processing.utils import validate_required_columns, report_progress_step,report_final
-from ....processing.error_constants import PROCESSING_ERROR,API_ERROR
-from .prompts.default import EXTRACTION_SYSTEM_MESSAGE
+from ....processing.utils import validate_required_columns, report_progress_step, report_final
+from ....processing.error_constants import PROCESSING_ERROR, API_ERROR
+from .prompts.default import SNIPPETS_SYSTEM_MESSAGE
 from .log import IsAgentTarget
 
 # # Create logger instance
@@ -21,7 +21,7 @@ def run_is_agent_target(df: pd.DataFrame,
                              throttler: Optional[Any] = None, 
                              provider: str = "openai", 
                              verbose: bool = True, 
-                             system_message: str = EXTRACTION_SYSTEM_MESSAGE, 
+                             system_message: str = SNIPPETS_SYSTEM_MESSAGE, 
                              **kwargs) -> pd.DataFrame:
     """
     """
@@ -90,6 +90,7 @@ def _process_output(result: str):
     """
     # Handle the weird cases
     if not result or result not in ['1','0']:
+        print (f"{PROCESSING_ERROR} SEE :{result}")
         return PROCESSING_ERROR
     # CAST as integers
     out_value = int(result)
@@ -100,7 +101,7 @@ def run_is_agent_target_basic(df: pd.DataFrame,
                                    api_key: str, 
                                    provider: str = "openai",
                                    model: str = "gpt-4.1-mini",
-                                   system_message: str = EXTRACTION_SYSTEM_MESSAGE, 
+                                   system_message: str = SNIPPETS_SYSTEM_MESSAGE, 
                                    **kwargs) -> pd.DataFrame:
     """
     Convenience function for basic affiliation extraction with default prompt and multi-provider support.
