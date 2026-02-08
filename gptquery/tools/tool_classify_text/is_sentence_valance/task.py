@@ -7,24 +7,23 @@ from typing import Optional, Callable, Any
 from ....core.client import GPTClient
 from ....processing.utils import validate_required_columns, report_progress_step, report_final
 from ....processing.error_constants import PROCESSING_ERROR, API_ERROR
-from .prompts.default import SNIPPETS_SYSTEM_MESSAGE
+from .prompts.default import IS_SETENCE_SYSTEM_MESSAGE
 from .log import IsAgentTarget
 
 # # Create logger instance
 logger = IsAgentTarget()
 
 @logger.log_execution
-def run_is_agent_target(df: pd.DataFrame, 
+def run_is_sentence_valance(df: pd.DataFrame, 
                              prompt_func: Callable, 
                              api_key: str, 
                              model: str,
                              throttler: Optional[Any] = None, 
                              provider: str = "openai", 
                              verbose: bool = True, 
-                             system_message: str = SNIPPETS_SYSTEM_MESSAGE, 
+                             system_message: str = "", 
                              **kwargs) -> pd.DataFrame:
-    """
-    """
+    """ """
         
     # VALIDATE required columns before starting
     validate_required_columns(df, prompt_func)
@@ -41,7 +40,7 @@ def run_is_agent_target(df: pd.DataFrame,
     results = []
     total_rows = len(df)
     if verbose:
-        print(f"Starting {run_is_agent_target.__name__} of {total_rows} rows using {provider}...")
+        print(f"Starting {run_is_sentence_valance.__name__} of {total_rows} rows using {provider}...")
     
     # PROCESS each row
     for i, (idx, row) in enumerate(df.iterrows()):
@@ -97,20 +96,20 @@ def _process_output(result: str):
     return out_value
 
 
-def run_is_agent_target_basic(df: pd.DataFrame, 
+def run_is_sentence_valance_basic(df: pd.DataFrame, 
                                    api_key: str, 
                                    provider: str = "openai",
                                    model: str = "gpt-4.1-mini",
-                                   system_message: str = SNIPPETS_SYSTEM_MESSAGE, 
+                                   system_message: str = IS_SETENCE_SYSTEM_MESSAGE, 
                                    **kwargs) -> pd.DataFrame:
     """
     Convenience function for basic affiliation extraction with default prompt and multi-provider support.
     """
-    from .prompts.default import prompt_is_agent_target
+    from .prompts.default import prompt_is_sentence_valance
     
-    return run_is_agent_target(
+    return run_is_sentence_valance(
         df=df,
-        prompt_func=prompt_is_agent_target,
+        prompt_func=prompt_is_sentence_valance,
         api_key=api_key,
         provider=provider,
         model=model,
