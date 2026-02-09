@@ -7,7 +7,7 @@ from typing import Optional, Callable, Any
 from ....core.client import GPTClient
 from ....processing.utils import validate_required_columns, report_progress_step, report_final
 from ....processing.error_constants import PROCESSING_ERROR, API_ERROR
-from .prompts.default import IS_SETENCE_SYSTEM_MESSAGE
+from .prompts.default import IS_SENTENCE_SYSTEM_MESSAGE
 from .log import IsAgentTarget
 
 # # Create logger instance
@@ -100,7 +100,7 @@ def run_is_sentence_valance_basic(df: pd.DataFrame,
                                    api_key: str, 
                                    provider: str = "openai",
                                    model: str = "gpt-4.1-mini",
-                                   system_message: str = IS_SETENCE_SYSTEM_MESSAGE, 
+                                   system_message: str = IS_SENTENCE_SYSTEM_MESSAGE, 
                                    **kwargs) -> pd.DataFrame:
     """
     Convenience function for basic affiliation extraction with default prompt and multi-provider support.

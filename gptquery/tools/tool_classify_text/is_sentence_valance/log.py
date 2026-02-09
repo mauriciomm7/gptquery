@@ -1,6 +1,7 @@
 # gptquery\gptquery\tools\tool_classify_text\is_agent_target\log.py
 import time
 import functools
+from ....processing.error_constants import PROCESSING_ERROR, API_ERROR, ERROR
 from typing import Any
 from ....core.execution_logger import ExecutionLogger
 
@@ -57,10 +58,15 @@ class IsAgentTarget(ExecutionLogger):
         """Count successful affiliation extraction operations."""
         if not hasattr(result, 'is_agent'):
             return 0
-        return sum(1 for r in result['is_agent'] if r != "ERROR")
+        # ERROR STRINGS for text exactness
+        error_strings = {ERROR, API_ERROR, PROCESSING_ERROR}
+        return sum(1 for r in result['is_agent'] if r not in error_strings) 
+
     
     def _count_errors(self, result: Any) -> int:
         """Count error operations."""
         if not hasattr(result, 'is_agent'):
             return 0
-        return sum(1 for r in result['is_agent'] if r == "ERROR")
+        # ERROR STRINGS for text exactness
+        error_strings = {ERROR, API_ERROR, PROCESSING_ERROR}
+        return sum(1 for r in result['is_agent'] if r in error_strings)
