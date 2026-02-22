@@ -7,7 +7,7 @@ Welcome to GPTQuery — a modular framework for AI-powered tool orchestration.
 - **Quickstart** → [docs/quickstart.md](./quickstart.md)
 - **Developer Guide** → [docs/devsquickstart.md](devsquickstart.md)
 - **Architecture** → [docs/architecture.md](./architecture.md)
-- **Tools** → [docs/tools/](./tools/)
+
 
 ???+ tip "Tip for Devs"
 

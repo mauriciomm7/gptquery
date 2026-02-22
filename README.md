@@ -13,7 +13,7 @@ The goal of this project is for researchers (or anyone) to create AI-powered too
 
 GPTQuery is organized into **three main layers**:
 
-1. **Core Infrastructure (`core/`)**  
+1. **Core Infrastructure (`core/`)**
    - Clients, logging, and utilities.
 
 2. **Processing Utilities (`processing/`)**  
@@ -125,7 +125,7 @@ This project is licensed under the [MIT License](./LICENSE).
 - [ ] ADD COL paramters to facing api such that it renames columns and never breaks contract?
 - [ ] DOCS - UPDATE the codeblocks aesthetics, better spacing.
 - [ ] DOCS - ADD copy-paste to codeblocks.
-
+- [ ] UPDATE logger to make column naming easier.
 
 Useful commands:
 

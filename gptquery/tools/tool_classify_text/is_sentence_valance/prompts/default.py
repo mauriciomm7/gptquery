@@ -35,6 +35,12 @@ The sentence makes a JUDGMENT or EVALUATION about the entity, including:
 - Makes judgments about whether actions/behaviors are appropriate, successful, or legitimate
 - Example: "The case law of THE COURT is increasingly important" = positive evaluation of Court's output
 
+### Consequences and Effects
+- Describes positive or negative consequences, outcomes, or effects flowing from the entity's rules, decisions, doctrines, or requirements
+- Evaluates whether compliance with or adherence to the entity's framework produces beneficial or harmful results
+- Discusses downstream impacts of the entity's legal instruments, doctrines, or policies
+- Example: "The strict conditions which were attached to the application of the ACTE CLAIR doctrine through the CILFIT ruling would both maintain THE COURT of Justice's monopoly on questions of interpretation and minimize the risk of a court of last instance adopting a wrong interpretation." = positive consequences of Court's doctrinal framework
+
 ### Positive/Negative Developments Affecting Entity
 - Describes developments that harm or benefit the entity (even if entity is the victim/beneficiary)
 - References erosion, decline, strengthening, or enhancement of entity's legitimacy/authority/effectiveness
