@@ -4,7 +4,6 @@ This set of tools were created to extract EU Law citations from text following a
 
 ## Basic Usage Description
 
-
 ### ✔️ VALIDATE whether all in-text citations are listed
 
 The first tool, `run_validate_basic()`, expects a text column (`question_text`) that may contain in-text EU law citations, and separately, a single string listing all citations (`potential_citations`). For each row, the function combines the text with this list of citations to create the user message (`user_msg`). Using these dynamic user messages and a tool-specific system prompt, it determines whether any citations are missing or if all are covered by the provided list.

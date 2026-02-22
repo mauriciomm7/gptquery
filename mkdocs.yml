@@ -5,6 +5,8 @@ theme:
   name: material
   logo: assets/robot-talking.png
   favicon: assets/robot-talking.ico
+  features:
+    - search.suggest
   font:
     text: Roboto
     code: JetBrains Mono
@@ -47,3 +49,6 @@ nav:
 
 extra_css:
   - stylesheets/overrides.css
+
+plugins:
+  - search
